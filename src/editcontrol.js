@@ -1,3 +1,5 @@
+import 'pepjs';
+
 import BABYLON from 'babylonjs';
 import ActHist from './acthist';
 
