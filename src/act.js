@@ -5,15 +5,15 @@ export default class Act{
     s = null;
 
 	constructor (mesh) {
-		this.p = mesh.position.Clone();
-		this.r = mesh.rotationQuaternion.Clone();
-		this.s = mesh.scaling.Clone();
+		this.p = mesh.position.clone();
+		this.r = mesh.rotationQuaternion.clone();
+		this.s = mesh.scaling.clone();
 	}
 
 	perform (mesh) {
-		mesh.position = this.p.Clone();
-		mesh.rotationQuaternion = this.r.Clone();
-		mesh.scaling = s.Clone();
+		mesh.position = this.p.clone();
+		mesh.rotationQuaternion = this.r.clone();
+		mesh.scaling = s.clone();
 	}
 
 }
