@@ -1,5 +1,3 @@
-import 'pepjs';
-
 import BABYLON from 'babylonjs';
 import ActHist from './acthist';
 
@@ -56,9 +54,9 @@ export default class EditControl {
         this.pointerup = this::this.onPointerUp;
         this.pointermove = this::this.onPointerMove;
 
-        canvas.addEventListener('pointerdown', this.pointerdown, false);
-        canvas.addEventListener('pointerup', this.pointerup, false);
-        canvas.addEventListener('pointermove', this.pointermove, false);
+        canvas.addEventListener('mousedown', this.pointerdown, false);
+        canvas.addEventListener('mouseup', this.pointerup, false);
+        canvas.addEventListener('mousemove', this.pointermove, false);
 
         this.setLocalAxes(mesh);
         this.renderer = this::this.renderLoopProcess;
@@ -95,9 +93,9 @@ export default class EditControl {
     }
 
     detach () {
-        this.canvas.removeEventListener('pointerdown', this.pointerdown, false);
-        this.canvas.removeEventListener('pointerup', this.pointerup, false);
-        this.canvas.removeEventListener('pointermove', this.pointermove, false);
+        this.canvas.removeEventListener('mousedown', this.pointerdown, false);
+        this.canvas.removeEventListener('mouseup', this.pointerup, false);
+        this.canvas.removeEventListener('mousemove', this.pointermove, false);
         this.scene.unregisterBeforeRender(this.renderer);
         this.disposeAll();
     }

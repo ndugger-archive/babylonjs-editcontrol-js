@@ -40,7 +40,6 @@
     "webpack": "^1.12.14"
   },
   "dependencies": {
-    "babylonjs": "^2.3.0",
-    "pepjs": "^0.4.1"
+    "babylonjs": "^2.3.0"
   }
 }
