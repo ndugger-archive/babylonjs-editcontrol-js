@@ -283,7 +283,7 @@ export default class EditControl {
     snapRZ = 0;
 
     onPointerMove () {
-        if (!this.pDown || !this.ediging)
+        if (!this.pDown || !this.editing)
             return;
 
         const newPos = this.getPosOnPickPlane();
@@ -401,7 +401,7 @@ export default class EditControl {
 
     doScaling (newPos) {
         const ppm = this.prevPos.subtract(this.meshPicked.position);
-        const diff = newPos.subtract(prevPos);
+        const diff = newPos.subtract(this.prevPos);
         let r = diff.length() / ppm.length();
 
         if (this.axisPicked === this.sX) {
@@ -864,9 +864,10 @@ export default class EditControl {
 		this.rEndY.renderingGroupId = 1;
 		this.rEndZ.renderingGroupId = 1;
 
-		this.rEndX.isPickable = false;
+        // TODO: This is broken; isPickable is only a getter
+		/*this.rEndX.isPickable = false;
 		this.rEndY.isPickable = false;
-		this.rEndZ.isPickable = false;
+		this.rEndZ.isPickable = false;*/
     }
 
     extrudeBox (w, l) {
@@ -888,26 +889,23 @@ export default class EditControl {
 
     createCircle (r) {
         const points = [];
-        const a = Math.PI / 180;
-        let x = 0, y = 0, p = 0;
+		let x, y;
+		let a = 3.14 / 180;
+		let p = 0;
+		for (let i = 0; i <= 360; i = i + 10) {
+			x = r * Math.cos(i * a);
+			if (i === 90)
+				y = r;
+			else if (i === 270)
+				y = -r;
+			else
+				y = r * Math.sin(i * a);
 
-        for (let i = 0; i <= 360; i += 10) {
-            x = r * Math.cos(i * 1);
-
-            if (i === 90)
-                y = r;
-            else if (i === 270)
-                y = -r;
-            else
-                y = r * Math.sin(i * a);
-
-            points[p] = new Vector3(x, y, 0);
-            p++;
-        }
-
-        const circle = Mesh.CreateLines('', points, this.scene);
-
-        return circle;
+			points[p] = new Vector3(x, y, 0);
+			p++;
+		}
+		const circle = Mesh.CreateLines('', points, this.scene);
+		return circle;
     }
 
     sCtl = null;

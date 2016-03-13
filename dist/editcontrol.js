@@ -391,7 +391,7 @@ module.exports =
 	    }, {
 	        key: 'onPointerMove',
 	        value: function onPointerMove() {
-	            if (!this.pDown || !this.ediging) return;
+	            if (!this.pDown || !this.editing) return;
 	
 	            var newPos = this.getPosOnPickPlane();
 	
@@ -473,7 +473,7 @@ module.exports =
 	        key: 'doScaling',
 	        value: function doScaling(newPos) {
 	            var ppm = this.prevPos.subtract(this.meshPicked.position);
-	            var diff = newPos.subtract(prevPos);
+	            var diff = newPos.subtract(this.prevPos);
 	            var r = diff.length() / ppm.length();
 	
 	            if (this.axisPicked === this.sX) {
@@ -897,9 +897,10 @@ module.exports =
 	            this.rEndY.renderingGroupId = 1;
 	            this.rEndZ.renderingGroupId = 1;
 	
-	            this.rEndX.isPickable = false;
+	            // TODO: This is broken; isPickable is only a getter
+	            /*this.rEndX.isPickable = false;
 	            this.rEndY.isPickable = false;
-	            this.rEndZ.isPickable = false;
+	            this.rEndZ.isPickable = false;*/
 	        }
 	    }, {
 	        key: 'extrudeBox',
@@ -914,22 +915,18 @@ module.exports =
 	        key: 'createCircle',
 	        value: function createCircle(r) {
 	            var points = [];
-	            var a = Math.PI / 180;
-	            var x = 0,
-	                y = 0,
-	                p = 0;
-	
-	            for (var i = 0; i <= 360; i += 10) {
-	                x = r * Math.cos(i * 1);
-	
+	            var x = void 0,
+	                y = void 0;
+	            var a = 3.14 / 180;
+	            var p = 0;
+	            for (var i = 0; i <= 360; i = i + 10) {
+	                x = r * Math.cos(i * a);
 	                if (i === 90) y = r;else if (i === 270) y = -r;else y = r * Math.sin(i * a);
 	
 	                points[p] = new Vector3(x, y, 0);
 	                p++;
 	            }
-	
 	            var circle = Mesh.CreateLines('', points, this.scene);
-	
 	            return circle;
 	        }
 	    }, {
