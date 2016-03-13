@@ -815,8 +815,8 @@ module.exports =
 	            var cr = r * this.axesScale;
 	
 	            this.tEndX = Mesh.CreateCylinder('tEndX', cl, 0, cr, 6, 1, this.scene);
-	            this.tEndY = tEndX.clone('tEndY');
-	            this.tEndZ = tEndX.clone('tEndZ');
+	            this.tEndY = this.tEndX.clone('tEndY');
+	            this.tEndZ = this.tEndX.clone('tEndZ');
 	
 	            this.tEndX.rotation.x = 1.57;
 	            this.tEndY.rotation.x = 1.57;
