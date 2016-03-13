@@ -222,7 +222,7 @@ export default class EditControl {
         }
         else {
             if (this.prevOverMesh) {
-                this.restore(this.prevOverMesh);
+                this.restoreColor(this.prevOverMesh);
                 this.prevOverMesh = null;
             }
         }

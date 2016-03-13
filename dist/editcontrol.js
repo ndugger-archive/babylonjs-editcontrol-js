@@ -341,7 +341,7 @@ module.exports =
 	                }
 	            } else {
 	                if (this.prevOverMesh) {
-	                    this.restore(this.prevOverMesh);
+	                    this.restoreColor(this.prevOverMesh);
 	                    this.prevOverMesh = null;
 	                }
 	            }
