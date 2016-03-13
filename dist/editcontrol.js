@@ -2566,17 +2566,17 @@ module.exports =
 			this.r = null;
 			this.s = null;
 	
-			this.p = mesh.position.Clone();
-			this.r = mesh.rotationQuaternion.Clone();
-			this.s = mesh.scaling.Clone();
+			this.p = mesh.position.clone();
+			this.r = mesh.rotationQuaternion.clone();
+			this.s = mesh.scaling.clone();
 		}
 	
 		_createClass(Act, [{
 			key: "perform",
 			value: function perform(mesh) {
-				mesh.position = this.p.Clone();
-				mesh.rotationQuaternion = this.r.Clone();
-				mesh.scaling = s.Clone();
+				mesh.position = this.p.clone();
+				mesh.rotationQuaternion = this.r.clone();
+				mesh.scaling = s.clone();
 			}
 		}]);
 	
