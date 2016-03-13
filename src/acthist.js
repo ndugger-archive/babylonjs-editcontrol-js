@@ -15,8 +15,8 @@ export default class ActHist {
         this.mesh = mesh;
         this.lastMax = capacity - 1;
 
-        if (mesh.rotationQuaternion === null) {
-            if (mesh.rotation !== null) {
+        if (!mesh.rotationQuaternion) {
+            if (mesh.rotation) {
                 mesh.rotationQuaternion = Quaternion.RotationYawPitchRoll(mesh.rotation.y, mesh.rotation.x, mesh.rotation.z);
             }
         }

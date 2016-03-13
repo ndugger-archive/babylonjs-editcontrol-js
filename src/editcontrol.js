@@ -193,7 +193,7 @@ export default class EditControl {
 
         if (pickResult.hit) {
             if (pickResult.pickedMesh !== this.prevOverMesh) {
-                if (this.prevOverMesh !== null) {
+                if (this.prevOverMesh) {
                     this.prevOverMesh.visibility = 0;
                     this.restoreColor(this.prevOverMesh);
                 }
@@ -221,7 +221,7 @@ export default class EditControl {
             }
         }
         else {
-            if (this.prevOverMesh !== null) {
+            if (this.prevOverMesh) {
                 this.restore(this.prevOverMesh);
                 this.prevOverMesh = null;
             }
@@ -290,7 +290,7 @@ export default class EditControl {
 
         const newPos = this.getPosOnPickPlane();
 
-        if (newPos === null)
+        if (!newPos)
             return;
 
         if (this.transEnabled)
@@ -580,7 +580,7 @@ export default class EditControl {
     }
 
     enableTranslation () {
-        if (this.tX === null) {
+        if (!this.tX) {
 			this.createTransAxes();
 			this.tCtl.parent = this.theParent;
 		}
@@ -612,7 +612,7 @@ export default class EditControl {
     }
 
     enableRotation () {
-        if (this.rX === null) {
+        if (!this.rX) {
             this.createRotAxes();
             this.rCtl.parent = this.theParent;
         }
@@ -644,7 +644,7 @@ export default class EditControl {
 	}
 
 	enableScaling() {
-		if (this.sX == null) {
+		if (!this.sX) {
 			this.createScaleAxes();
 			this.sCtl.parent = this.theParent;
 		}

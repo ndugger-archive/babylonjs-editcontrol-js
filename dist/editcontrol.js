@@ -314,7 +314,7 @@ module.exports =
 	
 	            if (pickResult.hit) {
 	                if (pickResult.pickedMesh !== this.prevOverMesh) {
-	                    if (this.prevOverMesh !== null) {
+	                    if (this.prevOverMesh) {
 	                        this.prevOverMesh.visibility = 0;
 	                        this.restoreColor(this.prevOverMesh);
 	                    }
@@ -340,7 +340,7 @@ module.exports =
 	                    }
 	                }
 	            } else {
-	                if (this.prevOverMesh !== null) {
+	                if (this.prevOverMesh) {
 	                    this.restore(this.prevOverMesh);
 	                    this.prevOverMesh = null;
 	                }
@@ -397,7 +397,7 @@ module.exports =
 	
 	            var newPos = this.getPosOnPickPlane();
 	
-	            if (newPos === null) return;
+	            if (!newPos) return;
 	
 	            if (this.transEnabled) this.doTranslation(newPos);
 	
@@ -632,7 +632,7 @@ module.exports =
 	    }, {
 	        key: 'enableTranslation',
 	        value: function enableTranslation() {
-	            if (this.tX === null) {
+	            if (!this.tX) {
 	                this.createTransAxes();
 	                this.tCtl.parent = this.theParent;
 	            }
@@ -665,7 +665,7 @@ module.exports =
 	    }, {
 	        key: 'enableRotation',
 	        value: function enableRotation() {
-	            if (this.rX === null) {
+	            if (!this.rX) {
 	                this.createRotAxes();
 	                this.rCtl.parent = this.theParent;
 	            }
@@ -698,7 +698,7 @@ module.exports =
 	    }, {
 	        key: 'enableScaling',
 	        value: function enableScaling() {
-	            if (this.sX == null) {
+	            if (!this.sX) {
 	                this.createScaleAxes();
 	                this.sCtl.parent = this.theParent;
 	            }
@@ -2478,8 +2478,8 @@ module.exports =
 	        this.mesh = mesh;
 	        this.lastMax = capacity - 1;
 	
-	        if (mesh.rotationQuaternion === null) {
-	            if (mesh.rotation !== null) {
+	        if (!mesh.rotationQuaternion) {
+	            if (mesh.rotation) {
 	                mesh.rotationQuaternion = Quaternion.RotationYawPitchRoll(mesh.rotation.y, mesh.rotation.x, mesh.rotation.z);
 	            }
 	        }
