@@ -743,7 +743,7 @@ export default class EditControl {
 
         this.tCtl = new Mesh('tarnsCtl', this.scene);
 
-		this.tX = extrudeBox(r / 2, l);
+		this.tX = this.extrudeBox(r / 2, l);
 		this.tX.name = 'X';
 		this.tY = this.tX.clone('Y');
 		this.tZ = this.tX.clone('Z');
@@ -929,7 +929,7 @@ export default class EditControl {
         this.sCtl = new Mesh('sCtl', this.scene);
 		this.sAll = Mesh.CreateBox('ALL', r * 2, this.scene);
 
-		this.sX = extrudeBox(r / 2, l);
+		this.sX = this.extrudeBox(r / 2, l);
 		this.sX.name = 'X';
 		this.sY = this.sX.clone('Y');
 		this.sZ = this.sX.clone('Z');
