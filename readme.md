@@ -1,7 +1,7 @@
 **Originally written by [ssatguru](https://github.com/ssatguru) in Java:
 [BabylonJS-EditControl](https://github.com/ssatguru/BabylonJS-EditControl)**
 
-Translated to modern JavaScript by Nick Dugger for use in a modular environment (via webpack, browserify, or in an electron app).
+Translated to modern JavaScript by [ndugger](https://github.com/ndugger) for use in a modular environment (via webpack, browserify, or in an electron app).
 
 ---
 
