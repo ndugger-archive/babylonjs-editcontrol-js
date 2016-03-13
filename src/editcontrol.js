@@ -818,8 +818,8 @@ export default class EditControl {
         this.rCtl = new Mesh('rotCtl', this.scene);
 
 		this.rX = Mesh.CreateTorus('X', d, r, 30, this.scene);
-		this.rY = rX.clone('Y');
-		this.rZ = rX.clone('Z');
+		this.rY = this.rX.clone('Y');
+		this.rZ = this.rX.clone('Z');
 
 		this.rX.material = this.redMat;
 		this.rY.material = this.greenMat;
@@ -965,9 +965,9 @@ export default class EditControl {
         const cr = r * this.axesScale;
 
 		this.sEndX = Mesh.CreateBox('', cr, this.scene);
-		this.sEndY = sEndX.clone('');
-		this.sEndZ = sEndX.clone('');
-		this.sEndAll = sEndX.clone('');
+		this.sEndY = this.sEndX.clone('');
+		this.sEndZ = this.sEndX.clone('');
+		this.sEndAll = this.sEndX.clone('');
 
 		this.sEndX.parent = this.sX;
 		this.sEndY.parent = this.sY;
