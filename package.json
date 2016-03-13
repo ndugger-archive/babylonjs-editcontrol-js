@@ -1,0 +1,45 @@
+{
+  "name": "babylonjs-editcontrol",
+  "version": "0.0.0",
+  "description": "An edit control for use in BabylonJS applications",
+  "main": "dist/editcontrol.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndugger/babylonjs-editcontrol-js.git"
+  },
+  "keywords": [
+    "babylonjs",
+    "webgl",
+    "3d",
+    "editor",
+    "edit",
+    "transform",
+    "controls"
+  ],
+  "contributors": [
+    {
+      "name": "Nick Dugger"
+    },
+    {
+      "name": "Satguru Srivastava"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndugger/babylonjs-editcontrol-js/issues"
+  },
+  "homepage": "https://github.com/ndugger/babylonjs-editcontrol-js#readme",
+  "devDependencies": {
+    "babel-core": "^6.7.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "webpack": "^1.12.14"
+  },
+  "dependencies": {
+    "babylonjs": "^2.3.0"
+  }
+}
