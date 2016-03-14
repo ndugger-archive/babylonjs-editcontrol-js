@@ -5,7 +5,7 @@ Translated to modern JavaScript by [ndugger](https://github.com/ndugger) for use
 
 ---
 
-Prerequisites:
+**Prerequisites**
 - Node 4.x+
 - NPM 3.x+
 
