@@ -30,7 +30,7 @@ Currently has the following features
 For a demo head on over to [http://ssatguru.appspot.com/babylonjs/EditControl/webapp/index.html](http://ssatguru.appspot.com/babylonjs/EditControl/webapp/index.html)
 
 ## Quick start
-**1)** run `npm install` to generate a `package.json` file, and then add the following snippet:
+**1)** run `npm init` to generate a `package.json` file, and then add the following snippet:
 ```json
 "dependencies": {
     "babylonjs-editcontrol": "git://github.com/ndugger/babylonjs-editcontrol-js.git"
