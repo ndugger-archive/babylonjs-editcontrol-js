@@ -5,6 +5,12 @@ Translated to modern JavaScript by [ndugger](https://github.com/ndugger) for use
 
 ---
 
+Prerequisites:
+- Node 4.x+
+- NPM 3.x+
+
+---
+
 # BabylonJS-EditControl
 An edit control for use in [BabylonJS](http://www.babylonjs.com/) (a 3D HTML Webgl framework)  applications
 
